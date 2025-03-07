@@ -1,0 +1,16 @@
+database:
+    batch_size: 250
+    url: ./logs/log_analyzer.db
+# One file per day
+# One archive per month (containing all daily files)
+rotate: true
+scan:
+    access:
+        keep_logs: true
+        path:
+            - C:/Program Files/Apache24/logs/access.log
+    error:
+        keep_logs: true
+        path:
+            - C:/Program Files/Apache24/logs/error.log
+    interval: 5s
