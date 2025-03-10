@@ -73,7 +73,7 @@ func listenAccessFile(logFile string) {
 
 					if viper.GetViper().GetBool("scan.access.keep_logs") {
 						dir := filepath.Dir(viper.GetViper().GetString("database.url"))
-						tmp, err := os.OpenFile(RotateFile(filepath.Join(dir, "log_analyzer_error.log")), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+						tmp, err := os.OpenFile(RotateFile(filepath.Join(dir, "log_analyzer_access.log")), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 						if err != nil {
 							LogError(err)
 							return err
